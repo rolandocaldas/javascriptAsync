@@ -1,0 +1,141 @@
+/*
+    Author: Rolando Caldas Sanchez
+    Blog: http://rolandocaldas.com/
+    Google+: https://plus.google.com/+RolandoCaldasSanchez
+    Linkedin: http://www.linkedin.com/in/rolandocaldas
+    Twitter: https://twitter.com/rolando_caldas
+
+    This file is part of an article:
+    http://rolandocaldas.com/html5/carga-asincrona-de-javascript 
+*/
+
+body {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#page {
+    display: none;
+}
+
+.loading {
+    background: rgba(0, 43, 255, 0.3);
+    bottom: 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    height: 200px;
+    left: 0;
+    margin: auto;
+    overflow: hidden;    
+    padding: 25px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+}
+
+.loading .big-circle {
+    -moz-animation: circleEffectOut 1s infinite linear;
+    -o-animation: circleEffectOut 1s infinite linear;
+    -webkit-animation: circleEffectOut 1s infinite linear;
+    animation: circleEffectOut 1s infinite linear;
+
+    background: rgba(0,0,0,0);
+    border-bottom: 10px solid rgba(86, 16, 36, 0.7);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 100%;
+    border-right: 5px solid rgba(0,0,0,0);
+    border-top: 10px solid rgba(86, 16, 36, 0.7);
+    box-shadow: 0 0 35px rgb(16, 86, 66);
+    box-sizing: border-box;
+    height: 150px;
+    margin: 0 auto;
+    opacity: 0.9;
+    width: 150px;
+}
+
+.loading .content {
+    padding: 0 10px;
+    position: relative;
+    text-align: left;
+    top: -100px;
+}
+
+.loading .little-circle {
+    -moz-animation: circleEffectIn 1s infinite linear;
+    -o-animation: circleEffectIn 1s infinite linear;
+    -webkit-animation: circleEffectIn 1s infinite linear;
+    animation: circleEffectIn 1s infinite linear;
+    
+    background-color: rgba(0,0,0,0);
+    
+    border-bottom: 5px solid rgba(16, 86, 66, 0.7);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 100%;
+    border-right: 5px solid rgba(0,0,0,0);
+    border-top: 5px solid rgba(16, 86, 66, 0.7);
+    box-shadow: 0 0 15px rgb(86, 16, 36);
+    box-sizing: border-box;
+
+    height: 100px;
+    margin: 0 auto;
+    opacity: 0.9;
+    position: relative;
+    top: -125px;
+    width: 100px;
+}
+
+@-moz-keyframes circleEffectOut {
+    0% {
+        -moz-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px rgb(16, 86, 66);
+    }
+
+    50% {
+        -moz-transform: rotate(145deg);
+        opacity: 1;
+    }
+
+    100% {
+        -moz-transform: rotate(-320deg);
+        opacity: 0;
+    };
+}
+
+@-webkit-keyframes circleEffectOut {
+    0% {
+        -webkit-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px rgb(16, 86, 66);
+    }
+
+    50% {
+        -webkit-transform: rotate(145deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: rotate(-320deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes circleEffectIn {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+
+@-webkit-keyframes circleEffectIn {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
